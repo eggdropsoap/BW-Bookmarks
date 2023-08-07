@@ -1,0 +1,7 @@
+*\.pdf
+*\.dvi
+*\.ps
+
+*\.log
+*\.aux
+*synctex*
