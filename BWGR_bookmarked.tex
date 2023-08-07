@@ -1,29 +1,62 @@
+% !TEX program = LuaLaTeX
+% arara: lualatex
+
+
+%    # INSTRUCTIONS
+%    
+%    1. Install a TeX distribution, such as [TeXLive](https://tug.org/texlive/)
+%    2. Place this file in an empty directory.
+%    3. Place a copy of `Burning_Wheel_Gold_Revised.pdf` in the same directory.
+%    4. Compile this file using the LuaLaTeX engine.  
+%       You can do so in a GUI TeX editor or on the command line.
+%       
+%       - On the command line using `lualatex` or `arara`:  
+%         `> lualatex BWGR_bookmarked.tex`  
+%         or  
+%         `> arara BWGR_bookmarked.tex`  
+%         
+%       - In a GUI TeX editor: choose LuaLaTeX as the engine, then click "Compile" or "Typeset".
+%         If the editor is TeXworks or TeXShop it should read the `!TEX` command at the top of
+%         the file and choose the engine automatically when you run a compile.
+%       
+%    5. The compile should result in a `BWGR_bookmarked.pdf` file. Open the file and check
+%        that the bookmarks work. If so, enjoy! You can rename the new PDF as you like.  
+%        If it didn't work, consider filing a bug report on this script's [GitHub Issues tracker]().
+%        It will help diagnose the problem if you include any output from the compile in the report.
+%        (If you compiled with `arara` on the command line, you'll need to re-run the compile with
+%        `lualatex` directly to get useful output.)
+
+
 %%% enable import of PDF v1.7 files: BWGR PDF is v1.7
 \RequirePackage{expl3}
 \ExplSyntaxOn
 \pdf_version_gset:n{1.7}
 \ExplSyntaxOff 
+%%%
 
 
 %%%
 % LaTeX file setup with PDF and bookmarks support
 %%%
 \documentclass{article}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}	% only used by non-UTF8 engines
+
+% enable reading PDF pages
 \usepackage[final]{pdfpages} % use 'draft' instead of 'final' for faster testing
 
 % PDF "info" panel data
 \usepackage[
-  pdfpagelabels=true,
-  pdftitle={The Burning Wheel Fantasy Roleplaying System},
-  pdfsubject={Revised Gold Edition},
-  pdfauthor={BWHQ},
+    pdfpagelabels=true,
+    pdftitle={The Burning Wheel Fantasy Roleplaying System},
+    pdfsubject={Revised Gold Edition},
+    pdfauthor={BWHQ},
 ]{hyperref}
 
 % enable bookmarks
 \usepackage{bookmark}
 
 % define a page size that matches BWGR PDF
+% (redundant with \includepdf[fitpaper=], but useful as fallback)
 \usepackage[paperheight=215.9mm,paperwidth=139.7mm,margin=1in,heightrounded]{geometry}
 
 %%%
@@ -32,11 +65,16 @@
 
 \begin{document}
 
-% read BWGR PDF pages
-\includepdf[pages=1-600]{Burning_Wheel_Gold_Revised.pdf}
+% read in BWGR PDF pages
+\includepdf[
+    pages=-,		% all pages
+    noautoscale=true,	% don't resize pages
+    fitpaper=true,	% match output page size to first input page size
+    lastpage=600,	% only needed if using DVI output
+]{Burning_Wheel_Gold_Revised.pdf}
 
 
-% add the hand-made list of bookmarks to it:
+% add the hand-made list of bookmarks to PDF output:
 \bookmark[page=1,level=0]{Title Page}
 \bookmark[page=2,level=0]{Credit Due}
 \bookmark[page=4,level=0]{Contents}
