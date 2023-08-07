@@ -1,0 +1,217 @@
+%%% enable import of PDF v1.7 files: BWGR PDF is v1.7
+\RequirePackage{expl3}
+\ExplSyntaxOn
+\pdf_version_gset:n{1.7}
+\ExplSyntaxOff 
+
+
+%%%
+% LaTeX file setup with PDF and bookmarks support
+%%%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[final]{pdfpages} % use 'draft' instead of 'final' for faster testing
+
+% PDF "info" panel data
+\usepackage[
+  pdfpagelabels=true,
+  pdftitle={The Burning Wheel Fantasy Roleplaying System},
+  pdfsubject={Revised Gold Edition},
+  pdfauthor={BWHQ},
+]{hyperref}
+
+% enable bookmarks
+\usepackage{bookmark}
+
+% define a page size that matches BWGR PDF
+\usepackage[paperheight=215.9mm,paperwidth=139.7mm,margin=1in,heightrounded]{geometry}
+
+%%%
+% setup ends, content commands begin
+%%%
+
+\begin{document}
+
+% read BWGR PDF pages
+\includepdf[pages=1-600]{Burning_Wheel_Gold_Revised.pdf}
+
+
+% add the hand-made list of bookmarks to it:
+\bookmark[page=1,level=0]{Title Page}
+\bookmark[page=2,level=0]{Credit Due}
+\bookmark[page=4,level=0]{Contents}
+\bookmark[page=6,level=0]{Foreword}
+\bookmark[page=8,level=0]{The Hub of the Wheel}
+\bookmark[page=9,level=0]{It Revolves on This}
+    \bookmark[page=10,level=1]{Using This Book}
+    \bookmark[page=10,level=1]{Voices in My Head}
+    \bookmark[page=10,level=1]{The Flow of the Game}
+        \bookmark[page=11,level=2]{Sheets of Paper}
+    \bookmark[page=11,level=1]{Dice}
+    \bookmark[page=12,level=1]{Ability Ratings}
+    \bookmark[page=13,level=1]{When to Roll}
+    \bookmark[page=14,level=1]{Obstacles to Overcome}
+    \bookmark[page=16,level=1]{Open-Ended Rolls}
+    \bookmark[page=16,level=1]{Die of Fate}
+    \bookmark[page=16,level=1]{Basic Dice in Brief}
+\bookmark[page=17,level=0]{Elements of Character}
+    \bookmark[page=17,level=1]{Stats}
+    \bookmark[page=18,level=1]{Attributes}
+    \bookmark[page=19,level=1]{Shade}
+    \bookmark[page=19,level=1]{Skills}
+    \bookmark[page=19,level=1]{Beliefs}
+    \bookmark[page=20,level=1]{Instincts}
+    \bookmark[page=20,level=1]{Traits}
+    \bookmark[page=20,level=1]{Resources and Circles}
+    \bookmark[page=21,level=1]{Gear and Stuff}
+    \bookmark[page=22,level=1]{Magic}
+    \bookmark[page=22,level=1]{From Hub to Spokes}
+\bookmark[page=23,level=0]{The Spokes}
+\bookmark[page=24,level=0]{Testing Your Abilities}
+    \bookmark[page=24,level=1]{Intent}
+    \bookmark[page=25,level=1]{Task}
+    \bookmark[page=25,level=1]{What Ability Do I Roll?}
+    \bookmark[page=25,level=1]{Standard Tests}
+    \bookmark[page=26,level=1]{Versus Tests}
+    \bookmark[page=26,level=1]{Graduated Tests}
+    \bookmark[page=27,level=1]{Linked Tests}
+    \bookmark[page=27,level=1]{Advantage and Disadvantage}
+    \bookmark[page=29,level=1]{Double Obstacle Penalty}
+    \bookmark[page=29,level=1]{Carefully, Patiently, Quickly: Allocating Successes}
+    \bookmark[page=30,level=1]{Success}
+    \bookmark[page=31,level=1]{Failure}
+    \bookmark[page=32,level=1]{Let It Ride}
+    \bookmark[page=33,level=1]{Time}
+    \bookmark[page=35,level=1]{Help}
+    \bookmark[page=36,level=1]{Fields of Related Knowledge}
+    \bookmark[page=37,level=1]{Exponent 0}
+    \bookmark[page=37,level=1]{Unskilled Tests}
+    \bookmark[page=37,level=1]{Tools}
+    \bookmark[page=38,level=1]{Written Instructions}
+    \bookmark[page=38,level=1]{Testing Abilities in Brief}
+\bookmark[page=40,level=0]{Advancing Abilities}
+    \bookmark[page=40,level=1]{Advancement Is Lifeblood}
+    \bookmark[page=41,level=1]{Routine, Difficult and Challenging}
+    \bookmark[page=42,level=1]{Number of Tests Required for Advancement}
+    \bookmark[page=43,level=1]{Pass or Fail}
+    \bookmark[page=43,level=1]{Advancing Attributes}
+    \bookmark[page=44,level=1]{Advancing Circles and Resources}
+    \bookmark[page=44,level=1]{Experience Log}
+    \bookmark[page=44,level=1]{Handing Out Tests}
+    \bookmark[page=45,level=1]{Series of Rolls = One Test}
+    \bookmark[page=45,level=1]{I Just Learned Something!}
+    \bookmark[page=45,level=1]{Advancement for Graduated Tests}
+    \bookmark[page=45,level=1]{Advancement for Versus Tests}
+    \bookmark[page=46,level=1]{Helping and Advancement}
+    \bookmark[page=46,level=1]{FoRKs and Advancement}
+    \bookmark[page=46,level=1]{Advantage Dice and Advancement}
+    \bookmark[page=47,level=1]{Artha and Advancement}
+    \bookmark[page=47,level=1]{Social Skills and Advancement}
+    \bookmark[page=47,level=1]{Practice}
+    \bookmark[page=49,level=1]{Learning New Skills}
+    \bookmark[page=50,level=1]{Learning from Another}
+    \bookmark[page=52,level=1]{Advancement in Brief}
+\bookmark[page=53,level=0]{Beliefs, Instincts and Traits}
+    \bookmark[page=53,level=1]{Beliefs}
+    \bookmark[page=55,level=1]{Instincts}
+    \bookmark[page=57,level=1]{Traits}
+    \bookmark[page=58,level=1]{Changing Traits and Earning New Ones}
+    \bookmark[page=60,level=1]{Beliefs, Instincts and Traits in Brief}
+\bookmark[page=61,level=0]{The Artha Wheel}
+    \bookmark[page=61,level=1]{Spiritual Rewards in a World on Fire}
+    \bookmark[page=61,level=1]{Interface}
+    \bookmark[page=62,level=1]{Fate, Persona and Deeds}
+    \bookmark[page=62,level=1]{Onward and Upward}
+    \bookmark[page=63,level=1]{Earning Artha}
+    \bookmark[page=66,level=1]{Spending Artha}
+    \bookmark[page=68,level=1]{Aristeia}
+    \bookmark[page=69,level=1]{Artha and Advancement}
+    \bookmark[page=69,level=1]{Epiphany}
+    \bookmark[page=69,level=1]{Artha and Game Play}
+    \bookmark[page=71,level=1]{Artha in Brief}
+\bookmark[page=72,level=0]{The Spokes in Play}
+    \bookmark[page=72,level=1]{Vincent’s Admonition}
+    \bookmark[page=72,level=1]{Setting Obstacles}
+    \bookmark[page=73,level=1]{Versus Tests Revisited}
+    \bookmark[page=74,level=1]{Make Characters and Play Now}
+
+\input{fire.tex}
+
+\bookmark[page=110,level=0]{Dwarven Lifepaths}
+    \bookmark[page=110,level=1]{Clansman Setting}
+    \bookmark[page=111,level=1]{Guilder Setting}
+    \bookmark[page=112,level=1]{Artificer Setting}
+    \bookmark[page=113,level=1]{Dwarven Noble Setting}
+    \bookmark[page=114,level=1]{Dwarven Host Subsetting}
+    \bookmark[page=116,level=1]{Dwarven Outcast Subsetting}
+    \bookmark[page=117,level=1]{Starting Stat Points for Dwarves by Age}
+
+\bookmark[page=118,level=0]{The Halls of the Dwarves}
+    \bookmark[page=118,level=1]{Dwarven Common Traits}
+    \bookmark[page=120,level=1]{Dwarven Special Traits}
+    \bookmark[page=120,level=1]{Dwarven Arts}
+    \bookmark[page=121,level=1]{Dwarven Greed}
+    \bookmark[page=124,level=1]{Dwarven Resources}
+    \bookmark[page=127,level=1]{Dwarves in Play}
+
+\bookmark[page=131,level=0]{Elven Lifepaths}
+    \bookmark[page=131,level=1]{Wilderlands Setting}
+    \bookmark[page=132,level=1]{Citadel Setting}
+    \bookmark[page=135,level=1]{Etharch Setting}
+    \bookmark[page=136,level=1]{Protector Subsetting}
+    \bookmark[page=138,level=1]{Starting Stat Points for Elves by Age}
+
+\bookmark[page=139,level=0]{The Ages of Elves}
+    \bookmark[page=139,level=1]{Elven Common Traits}
+    \bookmark[page=141,level=1]{Special Elven Traits}
+    \bookmark[page=141,level=1]{Care of the Eternal}
+    \bookmark[page=142,level=1]{Elven Skill Songs}
+    \bookmark[page=142,level=1]{Elven Spell Songs}
+    \bookmark[page=144,level=1]{Elven Spell Songs List}
+        \bookmark[page=144,level=2]{A}
+        \bookmark[page=145,level=2]{B-D}
+        \bookmark[page=146,level=2]{E-G}
+        \bookmark[page=147,level=2]{H-L}
+        \bookmark[page=148,level=2]{M-R}
+        \bookmark[page=149,level=2]{S}
+        \bookmark[page=151,level=2]{T}
+        \bookmark[page=152,level=2]{V-W}
+    \bookmark[page=152,level=1]{Elven Grief}
+    \bookmark[page=156,level=1]{Elven Resources}
+    \bookmark[page=159,level=1]{Elves in Play}
+
+\input{human-lps.tex}
+
+\bookmark[page=228,level=0]{Orc Lifepaths}
+    \bookmark[page=228,level=1]{Chattel Setting}
+    \bookmark[page=229,level=1]{Great and Black Setting}
+    \bookmark[page=231,level=1]{Black Legion Subsetting}
+    \bookmark[page=232,level=1]{Servant of the Dark Blood Subsetting}
+    \bookmark[page=234,level=1]{Starting Stat Points for Orcs by Age}
+
+\bookmark[page=235,level=0]{The Hate of Orcs}
+    \bookmark[page=235,level=1]{Brutal Life}
+    \bookmark[page=236,level=1]{Orc Common Traits}
+    \bookmark[page=237,level=1]{Orc Special Traits}
+    \bookmark[page=238,level=1]{Orc Skills}
+    \bookmark[page=238,level=1]{Orc Hatred}
+    \bookmark[page=240,level=1]{Advancing Hatred}
+    \bookmark[page=241,level=1]{Summoning Fury}
+    \bookmark[page=242,level=1]{Orc Resources}
+    \bookmark[page=244,level=1]{Void Embrace}
+    \bookmark[page=246,level=1]{Orc Rituals Skills}
+    \bookmark[page=247,level=1]{Rituals of Night}
+        \bookmark[page=247,level=2]{B}
+        \bookmark[page=248,level=2]{C-D}
+        \bookmark[page=249,level=2]{E-I}
+    \bookmark[page=250,level=1]{Orcs in Play}
+
+
+\bookmark[page=251,level=0]{The Lists}
+
+\input{lists.tex}
+
+\input{the-rim.tex}
+\input{appendices}
+
+\end{document}
