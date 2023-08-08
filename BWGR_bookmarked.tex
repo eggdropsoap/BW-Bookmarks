@@ -2,30 +2,39 @@
 % arara: lualatex
 
 
-%    # INSTRUCTIONS
-%    
-%    1. Install a TeX distribution, such as [TeXLive](https://tug.org/texlive/)
-%    2. Place this file in an empty directory.
-%    3. Place a copy of `Burning_Wheel_Gold_Revised.pdf` in the same directory.
-%    4. Compile this file using the LuaLaTeX engine.  
-%       You can do so in a GUI TeX editor or on the command line.
+% # INSTRUCTIONS
+%
+% 1.  Install a TeX distribution, such as [TeX Live](https://tug.org/texlive/).
+% 2.  Place this file in an empty directory.
+% 3.  Place `Burning_Wheel_Gold_Revised.pdf` in the same directory.
+% 4.  Compile this LaTeX script file using the LuaLaTeX engine.  
+%     You can do so in a GUI TeX editor or on the command line.
+%
+%     - In a GUI TeX editor: open this file, choose LuaLaTeX as the engine,
+%       then click "Compile" or "Typeset".
+%       If the editor is TeXworks or TeXShop it should read the `!TEX` command at the top of
+%       the file and choose the engine automatically for you when you run a compile.
+%
+%     - On the command line using `lualatex` or `arara`:  
 %       
-%       - On the command line using `lualatex` or `arara`:  
-%         `> lualatex BWGR_bookmarked.tex`  
-%         or  
-%         `> arara BWGR_bookmarked.tex`  
-%         
-%       - In a GUI TeX editor: choose LuaLaTeX as the engine, then click "Compile" or "Typeset".
-%         If the editor is TeXworks or TeXShop it should read the `!TEX` command at the top of
-%         the file and choose the engine automatically when you run a compile.
+%           lualatex BWGR_bookmarked.tex
 %       
-%    5. The compile should result in a `BWGR_bookmarked.pdf` file. Open the file and check
-%        that the bookmarks work. If so, enjoy! You can rename the new PDF as you like.  
-%        If it didn't work, consider filing a bug report on this script's [GitHub Issues tracker]().
-%        It will help diagnose the problem if you include any output from the compile in the report.
-%        (If you compiled with `arara` on the command line, you'll need to re-run the compile with
-%        `lualatex` directly to get useful output.)
+%       or  
+%       
+%           arara BWGR_bookmarked.tex
+%     
+% 5.  The compile should result in a `BWGR_bookmarked.pdf` file. Open the file and check
+%     that the bookmarks work.  
+%     If so, enjoy! You can rename the PDF as you like.
+%
+%     If it didn't work, consider filing a bug report on this script's
+%     [GitHub Issues tracker](https://github.com/eggdropsoap/BW-Bookmarks/issues).
+%     It will help diagnose the problem if you include any output from the compile in the report.
+%     (If you compiled with `arara` on the command line, you'll need to re-run the compile with
+%     `lualatex` directly to get useful output.)
 
+
+%%%% script begins %%%%
 
 %%% enable import of PDF v1.7 files: BWGR PDF is v1.7
 \RequirePackage{expl3}
@@ -75,11 +84,20 @@
 
 
 % add the hand-made list of bookmarks to PDF output:
+
+
+% Frontmatter
+
 \bookmark[page=1,level=0]{Title Page}
 \bookmark[page=2,level=0]{Credit Due}
 \bookmark[page=4,level=0]{Contents}
 \bookmark[page=6,level=0]{Foreword}
+
+
+% The Hub
+
 \bookmark[page=8,level=0]{The Hub of the Wheel}
+
 \bookmark[page=9,level=0]{It Revolves on This}
     \bookmark[page=10,level=1]{Using This Book}
     \bookmark[page=10,level=1]{Voices in My Head}
@@ -92,6 +110,7 @@
     \bookmark[page=16,level=1]{Open-Ended Rolls}
     \bookmark[page=16,level=1]{Die of Fate}
     \bookmark[page=16,level=1]{Basic Dice in Brief}
+
 \bookmark[page=17,level=0]{Elements of Character}
     \bookmark[page=17,level=1]{Stats}
     \bookmark[page=18,level=1]{Attributes}
@@ -104,7 +123,12 @@
     \bookmark[page=21,level=1]{Gear and Stuff}
     \bookmark[page=22,level=1]{Magic}
     \bookmark[page=22,level=1]{From Hub to Spokes}
+
+
+% The Spokes
+
 \bookmark[page=23,level=0]{The Spokes}
+
 \bookmark[page=24,level=0]{Testing Your Abilities}
     \bookmark[page=24,level=1]{Intent}
     \bookmark[page=25,level=1]{Task}
@@ -127,6 +151,7 @@
     \bookmark[page=37,level=1]{Tools}
     \bookmark[page=38,level=1]{Written Instructions}
     \bookmark[page=38,level=1]{Testing Abilities in Brief}
+
 \bookmark[page=40,level=0]{Advancing Abilities}
     \bookmark[page=40,level=1]{Advancement Is Lifeblood}
     \bookmark[page=41,level=1]{Routine, Difficult and Challenging}
@@ -149,12 +174,14 @@
     \bookmark[page=49,level=1]{Learning New Skills}
     \bookmark[page=50,level=1]{Learning from Another}
     \bookmark[page=52,level=1]{Advancement in Brief}
+
 \bookmark[page=53,level=0]{Beliefs, Instincts and Traits}
     \bookmark[page=53,level=1]{Beliefs}
     \bookmark[page=55,level=1]{Instincts}
     \bookmark[page=57,level=1]{Traits}
     \bookmark[page=58,level=1]{Changing Traits and Earning New Ones}
     \bookmark[page=60,level=1]{Beliefs, Instincts and Traits in Brief}
+
 \bookmark[page=61,level=0]{The Artha Wheel}
     \bookmark[page=61,level=1]{Spiritual Rewards in a World on Fire}
     \bookmark[page=61,level=1]{Interface}
@@ -167,13 +194,94 @@
     \bookmark[page=69,level=1]{Epiphany}
     \bookmark[page=69,level=1]{Artha and Game Play}
     \bookmark[page=71,level=1]{Artha in Brief}
+
 \bookmark[page=72,level=0]{The Spokes in Play}
     \bookmark[page=72,level=1]{Vincent’s Admonition}
     \bookmark[page=72,level=1]{Setting Obstacles}
     \bookmark[page=73,level=1]{Versus Tests Revisited}
     \bookmark[page=74,level=1]{Make Characters and Play Now}
 
-\input{fire.tex}
+
+% ChaBu
+
+\bookmark[page=77,level=0]{Fire in the Garden}
+    \bookmark[page=78,level=1]{From the Day You Were Born...}
+        \bookmark[page=78,level=2]{Lifepaths}
+        \bookmark[page=78,level=2]{Setting}
+        \bookmark[page=78,level=2]{Character Stock}
+    \bookmark[page=79,level=1]{The Elements of a Lifepath}
+        \bookmark[page=79,level=2]{Time}
+        \bookmark[page=79,level=2]{Resources (Res)}
+        \bookmark[page=79,level=2]{Statistics (Stat)}
+        \bookmark[page=79,level=2]{Leads}
+        \bookmark[page=80,level=2]{Skills}
+        \bookmark[page=80,level=2]{Trait}
+        
+\bookmark[page=81,level=0]{Character Burning}
+    \bookmark[page=81,level=1]{1. Character Concept}
+        \bookmark[page=81,level=2]{Situation}
+        \bookmark[page=82,level=2]{Situation in Reverse}
+    \bookmark[page=82,level=1]{2. Choose Lifepaths}
+        \bookmark[page=82,level=2]{Starting Lifepath Limit}
+        \bookmark[page=83,level=2]{Choose Character Stock}
+        \bookmark[page=83,level=2]{Pick ’Em}
+        \bookmark[page=84,level=2]{Leads: Moving to a New Setting}
+        \bookmark[page=84,level=2]{Skills and Traits: Make a List}
+        \bookmark[page=84,level=2]{Repeating Lifepaths: The Law of Diminishing Returns}
+    \bookmark[page=85,level=1]{3. Age}
+    \bookmark[page=85,level=1]{4. Stats}
+        \bookmark[page=85,level=2]{Age Chart}
+        \bookmark[page=85,level=2]{Mental and Physical Pools}
+        \bookmark[page=85,level=2]{Divide}
+        \bookmark[page=86,level=2]{Shade}
+    \bookmark[page=86,level=1]{5. Skills}
+        \bookmark[page=86,level=2]{Set General Points Aside}
+        \bookmark[page=86,level=2]{Skill Points}
+        \bookmark[page=86,level=2]{Skill Choices}
+        \bookmark[page=87,level=2]{Opening Skills: Roots}
+        \bookmark[page=88,level=2]{Advancing a Skill}
+        \bookmark[page=88,level=2]{Spending General Skill Points}
+    \bookmark[page=89,level=1]{6. Traits}
+        \bookmark[page=89,level=2]{Trait Point Pool}
+        \bookmark[page=89,level=2]{Required Lifepath Trait}
+        \bookmark[page=89,level=2]{Lifepath Traits}
+        \bookmark[page=89,level=2]{Special Traits}
+    \bookmark[page=90,level=1]{7. Attributes}
+        \bookmark[page=90,level=2]{Mortal Wound}
+        \bookmark[page=90,level=2]{Reflexes}
+        \bookmark[page=91,level=2]{Health}
+        \bookmark[page=91,level=2]{Steel}
+        \bookmark[page=92,level=2]{Hesitation}
+        \bookmark[page=92,level=2]{Emotional Attributes}
+        \bookmark[page=93,level=2]{Stride}
+    \bookmark[page=93,level=1]{8. Spending Resource Points}
+        \bookmark[page=93,level=2]{Gear}
+        \bookmark[page=93,level=2]{Relationships}
+        \bookmark[page=94,level=2]{Affiliations}
+        \bookmark[page=95,level=2]{Reputation}
+        \bookmark[page=96,level=2]{Gangs and Crews}
+        \bookmark[page=96,level=2]{Bodyguards}
+        \bookmark[page=96,level=2]{Spells}
+        \bookmark[page=96,level=2]{Stray Resource Points}
+    \bookmark[page=97,level=1]{9. Resources and Circles Abilities}
+        \bookmark[page=97,level=2]{Starting Resources Exponent}
+        \bookmark[page=97,level=2]{Starting Circles Exponent}
+    \bookmark[page=98,level=1]{10. Physical Tolerances}
+        \bookmark[page=98,level=2]{Mortal}
+        \bookmark[page=98,level=2]{Superficial}
+        \bookmark[page=98,level=2]{Light, Midi, Severe and Traumatic}
+    \bookmark[page=98,level=1]{11. Beliefs and Instincts}
+        \bookmark[page=98,level=2]{Beliefs}
+        \bookmark[page=101,level=2]{Instincts}
+    \bookmark[page=103,level=1]{12. Name Him and You're Finished}
+    \bookmark[page=104,level=1]{Rules of Thumb in Character Burning}
+        \bookmark[page=104,level=2]{Basic, Naked Characters}
+        \bookmark[page=104,level=2]{Setting Your Game's Starting Power Level}
+        \bookmark[page=105,level=2]{Min-Max}
+        \bookmark[page=106,level=2]{Missing Paths}
+
+
+% Settings
 
 \bookmark[page=110,level=0]{Dwarven Lifepaths}
     \bookmark[page=110,level=1]{Clansman Setting}
@@ -218,7 +326,40 @@
     \bookmark[page=156,level=1]{Elven Resources}
     \bookmark[page=159,level=1]{Elves in Play}
 
-\input{human-lps.tex}
+\bookmark[page=163,level=0]{Human Lifepaths}
+    \bookmark[page=163,level=1]{Peasant Setting}
+    \bookmark[page=165,level=1]{Villager Setting}
+    \bookmark[page=170,level=1]{City Dweller Setting}
+    \bookmark[page=177,level=1]{Noble Setting}
+    \bookmark[page=179,level=1]{Noble Court Subsetting}
+    \bookmark[page=184,level=1]{Religious Subsetting}
+    \bookmark[page=187,level=1]{Professional Soldier Subsetting}
+    \bookmark[page=189,level=1]{Seafaring Setting}
+    \bookmark[page=192,level=1]{Servitude and Captive Setting}
+    \bookmark[page=193,level=1]{Outcast Subsetting}
+    \bookmark[page=197,level=1]{Starting Stat Points for Men by Age}
+    
+\bookmark[page=198,level=0]{The Mortal Kingdoms}
+    \bookmark[page=198,level=1]{Human Common Traits}
+    \bookmark[page=198,level=1]{Human Lifepath Traits}
+    \bookmark[page=199,level=1]{Special Human Traits}
+    \bookmark[page=202,level=1]{Human Resources}
+    \bookmark[page=206,level=1]{Faith}
+    \bookmark[page=207,level=1]{Sorcery Spells}
+        \bookmark[page=207,level=2]{A-B}
+        \bookmark[page=208,level=2]{C}
+        \bookmark[page=210,level=2]{D}
+        \bookmark[page=211,level=2]{E}
+        \bookmark[page=212,level=2]{F-G}
+        \bookmark[page=214,level=2]{H-L}
+        \bookmark[page=215,level=2]{M-O}
+        \bookmark[page=217,level=2]{P-Q}
+        \bookmark[page=218,level=2]{R}
+        \bookmark[page=219,level=2]{S}
+        \bookmark[page=220,level=2]{T}
+        \bookmark[page=221,level=2]{V}
+        \bookmark[page=221,level=2]{W-Z}
+    \bookmark[page=224,level=1]{Humans in Play}
 
 \bookmark[page=228,level=0]{Orc Lifepaths}
     \bookmark[page=228,level=1]{Chattel Setting}
@@ -245,11 +386,353 @@
     \bookmark[page=250,level=1]{Orcs in Play}
 
 
+% The Lists
+
 \bookmark[page=251,level=0]{The Lists}
 
-\input{lists.tex}
+\bookmark[page=252,level=0]{Skill List}
+    \bookmark[page=252,level=1]{Anatomy of a Skill}
+    \bookmark[page=252,level=1]{§ Skills}
+    \bookmark[page=252,level=1]{Restrictions}
+    \bookmark[page=253,level=1]{Wises}
+    \bookmark[page=253,level=1]{History}
+    \bookmark[page=253,level=1]{Tools}
+    \bookmark[page=253,level=1]{A-Z}
+        \bookmark[page=253,level=2]{A}
+        \bookmark[page=258,level=2]{B}
+        \bookmark[page=262,level=2]{C}
+        \bookmark[page=267,level=2]{D}
+        \bookmark[page=269,level=2]{E}
+        \bookmark[page=272,level=2]{F}
+        \bookmark[page=275,level=2]{G}
+        \bookmark[page=276,level=2]{H}
+        \bookmark[page=278,level=2]{I}
+        \bookmark[page=279,level=2]{J-K}
+        \bookmark[page=280,level=2]{L}
+        \bookmark[page=282,level=2]{M}
+        \bookmark[page=285,level=2]{N}
+        \bookmark[page=286,level=2]{O}
+        \bookmark[page=287,level=2]{P}
+        \bookmark[page=289,level=2]{R}
+        \bookmark[page=294,level=2]{S}
+        \bookmark[page=304,level=2]{T, U}
+        \bookmark[page=306,level=2]{V}
+        \bookmark[page=307,level=2]{W-Z}
+        
+\bookmark[page=310,level=0]{Trait List}
+    \bookmark[page=310,level=1]{Create Your Own}
+    \bookmark[page=310,level=1]{Trait Types and Restrictions}
+        \bookmark[page=310,level=2]{Character Trait (Char)}
+        \bookmark[page=310,level=2]{Call-On (C-O)}
+        \bookmark[page=310,level=2]{Die Trait (Dt)}
+        \bookmark[page=310,level=2]{Common Traits}
+        \bookmark[page=311,level=2]{Restrictions}
+    \bookmark[page=311,level=1]{A-Z}
+        \bookmark[page=311,level=2]{A}
+        \bookmark[page=314,level=2]{B}
+        \bookmark[page=317,level=2]{C}
+        \bookmark[page=320,level=2]{D}
+        \bookmark[page=323,level=2]{E}
+        \bookmark[page=325,level=2]{F}
+        \bookmark[page=327,level=2]{G}
+        \bookmark[page=328,level=2]{G}
+        \bookmark[page=330,level=2]{I}
+        \bookmark[page=331,level=2]{J}
+        \bookmark[page=331,level=2]{K}
+        \bookmark[page=332,level=2]{L}
+        \bookmark[page=335,level=2]{M}
+        \bookmark[page=336,level=2]{N}
+        \bookmark[page=337,level=2]{O}
+        \bookmark[page=339,level=2]{P}
+        \bookmark[page=342,level=2]{Q}
+        \bookmark[page=343,level=2]{R}
+        \bookmark[page=344,level=2]{S}
+        \bookmark[page=349,level=2]{T}
+        \bookmark[page=351,level=2]{U}
+        \bookmark[page=352,level=2]{V}
+        \bookmark[page=353,level=2]{W}
+        \bookmark[page=354,level=2]{X, Y, Z}
 
-\input{the-rim.tex}
-\input{appendices}
+
+% The Rim
+
+\bookmark[page=356,level=0]{The Rim of the Wheel}
+
+\bookmark[page=357,level=0]{Wheel Meets Road}
+    \bookmark[page=357,level=1]{The Rim of the Wheel}
+    \bookmark[page=359,level=1]{Pick and Choose}
+
+\bookmark[page=360,level=0]{Steel}
+    \bookmark[page=360,level=1]{Surprise, Fear and Pain}
+    \bookmark[page=361,level=1]{10 Minus Will = Hesitation}
+    \bookmark[page=361,level=1]{Steel Tests}
+    \bookmark[page=363,level=1]{Steel Test Advantages and Disadvantages}
+    \bookmark[page=363,level=1]{Steel Outside of Conflict}
+    \bookmark[page=364,level=1]{Steel and Advancement}
+    \bookmark[page=365,level=1]{Steel in Brief}
+
+\bookmark[page=366,level=0]{Resources} 
+    \bookmark[page=366,level=1]{Resources Basics}
+    \bookmark[page=368,level=1]{Testing Resources}
+    \bookmark[page=369,level=1]{Failed Resources Tests: Tax}
+    \bookmark[page=370,level=1]{Scoring a Deal}
+    \bookmark[page=370,level=1]{Haggling}
+    \bookmark[page=371,level=1]{Bidding}
+    \bookmark[page=371,level=1]{Lifestyles}
+    \bookmark[page=372,level=1]{Recovering Resources}
+    \bookmark[page=373,level=1]{Advancing Resources}
+    \bookmark[page=373,level=1]{Cash, Goods, Titles and Loans}
+    \bookmark[page=375,level=1]{Currency}
+    \bookmark[page=376,level=1]{Resources in Brief}
+
+\bookmark[page=377,level=0]{Relationships, Circles, Affiliations and Reputations} 
+    \bookmark[page=377,level=1]{Relationships}
+    \bookmark[page=378,level=1]{Circles}
+    \bookmark[page=379,level=1]{Scope of the Circles}
+    \bookmark[page=380,level=1]{Circles Obstacles}
+    \bookmark[page=381,level=1]{Testing Circles}
+    \bookmark[page=382,level=1]{Naming the Unknown}
+    \bookmark[page=382,level=1]{Enmity Clause}
+    \bookmark[page=383,level=1]{Affiliations}
+    \bookmark[page=384,level=1]{Reputations}
+    \bookmark[page=386,level=1]{Building Relationships with Circles}
+    \bookmark[page=386,level=1]{Circles and Advancement}
+    \bookmark[page=387,level=1]{Circles in Brief}
+
+\bookmark[page=388,level=0]{Duel of Wits}
+    \bookmark[page=389,level=1]{Argument not Mind Control}
+    \bookmark[page=389,level=1]{Dueling Skills}
+    \bookmark[page=390,level=1]{Statement of Purpose}
+    \bookmark[page=391,level=1]{The Body of Argument}
+    \bookmark[page=391,level=1]{The Duel}
+    \bookmark[page=394,level=1]{Elements of Elocution}
+    \bookmark[page=398,level=1]{Baiting Beliefs}
+    \bookmark[page=398,level=1]{Resolving the Argument}
+    \bookmark[page=401,level=1]{Helping in the Duel of Wits}
+    \bookmark[page=401,level=1]{Alternate Dueling Method}
+    \bookmark[page=402,level=1]{Duel of Wits in Brief}
+
+\bookmark[page=403,level=0]{Range and Cover} 
+    \bookmark[page=403,level=1]{Range, Cover and Position Basics}
+    \bookmark[page=404,level=1]{Range and Cover Procedure}
+    \bookmark[page=405,level=1]{Range}
+    \bookmark[page=406,level=1]{Cover}
+    \bookmark[page=407,level=1]{Maneuver and Action}
+    \bookmark[page=410,level=1]{Weapon Range Dice}
+    \bookmark[page=411,level=1]{Field Maneuvers}
+    \bookmark[page=416,level=1]{Free Shots}
+    \bookmark[page=416,level=1]{Too Close to Shoot}
+    \bookmark[page=417,level=1]{Range and Cover Example}
+    \bookmark[page=419,level=1]{Fixed Positions and Fortifications}
+    \bookmark[page=419,level=1]{Hesitation}
+    \bookmark[page=420,level=1]{Forfeiting Actions in Range and Cover}
+    \bookmark[page=421,level=1]{Teams in Range and Cover}
+    \bookmark[page=422,level=1]{Spells in Range and Cover}
+    \bookmark[page=422,level=1]{Weather, Terrain and Light}
+    \bookmark[page=423,level=1]{Range and Cover in Brief}
+
+\bookmark[page=424,level=0]{Fight}
+    \bookmark[page=424,level=1]{Picking Your Battles}
+    \bookmark[page=425,level=1]{Simple Martial Conflict}
+    \bookmark[page=426,level=1]{Bloody Versus Tests}
+    \bookmark[page=428,level=1]{Fight Procedure}
+    \bookmark[page=429,level=1]{Starting a Fight}
+    \bookmark[page=432,level=1]{Actions in Volleys}
+    \bookmark[page=433,level=1]{Fight Scripting}
+    \bookmark[page=435,level=1]{Positioning During a Fight}
+    \bookmark[page=439,level=1]{Fighting Skills}
+    \bookmark[page=439,level=1]{Fight Actions}
+        \bookmark[page=441,level=2]{Attack Fighting Actions}
+        \bookmark[page=443,level=2]{Defense Fighting Actions}
+        \bookmark[page=445,level=2]{Basic Fighting Actions}
+        \bookmark[page=449,level=2]{Special Fighting Actions}
+        \bookmark[page=450,level=2]{Shooting and Throwing Actions}
+        \bookmark[page=452,level=2]{Magic Actions}
+        \bookmark[page=453,level=2]{Social Actions}
+        \bookmark[page=453,level=2]{Hesitation Actions}
+    \bookmark[page=455,level=1]{Knocked Down}
+    \bookmark[page=455,level=1]{Speech, Song and Prayer}
+    \bookmark[page=455,level=1]{Going Places During a Fight}
+    \bookmark[page=455,level=1]{Terrain}
+    \bookmark[page=456,level=1]{Changing an Action}
+    \bookmark[page=457,level=1]{Eye of the Storm}
+    \bookmark[page=458,level=1]{Switching Weapons During an Exchange}
+    \bookmark[page=459,level=1]{Fighting Multiple Opponents}
+    \bookmark[page=461,level=1]{Surprise and Ambush}
+    \bookmark[page=462,level=1]{Fight Sequence in Brief}
+
+\bookmark[page=463,level=0]{Weapons}
+    \bookmark[page=463,level=1]{To Hit and Damage?}
+    \bookmark[page=463,level=1]{IMS}
+    \bookmark[page=464,level=1]{Striking Your Opponent}
+    \bookmark[page=465,level=1]{Defender Declares his Posture}
+    \bookmark[page=466,level=1]{Melee Weapons}
+    \bookmark[page=467,level=1]{Shooting Your Opponent}
+    \bookmark[page=468,level=1]{Missile and Thrown Weapons}
+    \bookmark[page=470,level=1]{Balance Dice}
+    \bookmark[page=470,level=1]{Gunpowder Die}
+    \bookmark[page=471,level=1]{Explosives}
+    \bookmark[page=472,level=1]{Weapons in Brief}
+
+\bookmark[page=474,level=0]{Armor and Shields}
+    \bookmark[page=474,level=1]{Armor Locations}
+    \bookmark[page=474,level=1]{Armor Types}
+    \bookmark[page=475,level=1]{Armor Protection Dice}
+    \bookmark[page=476,level=1]{Armor Test Obstacles}
+    \bookmark[page=476,level=1]{Weapons Versus Armor}
+    \bookmark[page=477,level=1]{Armor Quality}
+    \bookmark[page=477,level=1]{Repairing Armor}
+    \bookmark[page=478,level=1]{Clumsy Weight}
+    \bookmark[page=479,level=1]{Mixing and Customizing Armor}
+    \bookmark[page=480,level=1]{Armor and Artha}
+    \bookmark[page=480,level=1]{Shields}
+    \bookmark[page=483,level=1]{Armor in Brief}
+    \bookmark[page=483,level=1]{Shields in Brief}
+
+\bookmark[page=484,level=0]{Anatomy of Injury}
+    \bookmark[page=484,level=1]{Injury, Treatment and Recovery}
+    \bookmark[page=484,level=1]{The Physical Tolerances Grayscale}
+    \bookmark[page=485,level=1]{Taking the Hit: Registering Wounds on the PTGS}
+    \bookmark[page=486,level=1]{Effects of Wounds}
+    \bookmark[page=488,level=1]{Wounded Dice}
+    \bookmark[page=489,level=1]{Steel and Pain}
+    \bookmark[page=490,level=1]{Bleeding}
+    \bookmark[page=491,level=1]{Treatment}
+    \bookmark[page=491,level=1]{Stop the Bleeding}
+    \bookmark[page=492,level=1]{Recovery}
+    \bookmark[page=495,level=1]{Failed Treatment or Recovery}
+    \bookmark[page=496,level=1]{Mortal Wounds}
+    \bookmark[page=497,level=1]{Shrugging It Off}
+    \bookmark[page=498,level=1]{Anatomy of Injury in Brief}
+
+\bookmark[page=499,level=0]{Sorcery}
+    \bookmark[page=499,level=1]{Sorcery Is a Skill}
+    \bookmark[page=500,level=1]{Gifted}
+    \bookmark[page=500,level=1]{Spell Casting and Idiom}
+    \bookmark[page=500,level=1]{The Facets of a Spell}
+    \bookmark[page=502,level=1]{The Basic Spell Cast}
+    \bookmark[page=503,level=1]{Casting Time}
+    \bookmark[page=504,level=1]{Tax}
+    \bookmark[page=505,level=1]{Effect}
+    \bookmark[page=506,level=1]{Area of Effect}
+    \bookmark[page=507,level=1]{Duration}
+    \bookmark[page=509,level=1]{Failed Casting}
+    \bookmark[page=511,level=1]{Spell Interrupt}
+    \bookmark[page=512,level=1]{Advanced Spell Casting}
+    \bookmark[page=513,level=1]{Coup de Magie}
+    \bookmark[page=514,level=1]{Spells as Weapons}
+    \bookmark[page=516,level=1]{Rain of Fire Versus Breath of Wind}
+    \bookmark[page=518,level=1]{Sorcerer Advances Will}
+    \bookmark[page=518,level=1]{Learning New Spells}
+    \bookmark[page=520,level=1]{Learning Sorcerous Skills}
+    \bookmark[page=520,level=1]{Natural Effect Scale}
+    \bookmark[page=521,level=1]{Sorcery in Brief}
+
+\bookmark[page=522,level=0]{Emotional Magic}
+    \bookmark[page=522,level=1]{Emotional Attributes}
+    \bookmark[page=522,level=1]{Faith}
+
+\bookmark[page=528,level=0]{Natural Magic}
+    \bookmark[page=528,level=1]{Spell-Like Effects}
+
+\bookmark[page=530,level=0]{Distance and Movement}
+    \bookmark[page=530,level=1]{The Pace}
+    \bookmark[page=530,level=1]{Distance}
+    \bookmark[page=530,level=1]{Stride}
+    \bookmark[page=531,level=1]{The Chase is On}
+
+\bookmark[page=533,level=0]{Riding and Mounted Combat}
+    \bookmark[page=533,level=1]{Riding to Travel}
+    \bookmark[page=533,level=1]{Riding in Fight}
+    \bookmark[page=536,level=1]{Riding in Range and Cover}
+    \bookmark[page=536,level=1]{Pursuit}
+    \bookmark[page=537,level=1]{Riding Gear}
+    \bookmark[page=537,level=1]{Riding Failure Complications}
+    \bookmark[page=537,level=1]{Riding and Steel}
+    \bookmark[page=538,level=1]{Tending Your Mount}
+    \bookmark[page=538,level=1]{Horse Skills}
+    \bookmark[page=539,level=1]{Horse Traits}
+
+\bookmark[page=541,level=0]{Materials}
+    \bookmark[page=541,level=1]{Knocking Down Doors}
+    \bookmark[page=543,level=1]{Thrown Against the Wall}
+
+\bookmark[page=544,level=0]{Heroic and Supernatural}
+    \bookmark[page=544,level=1]{Why Black, Gray, White?}
+    \bookmark[page=544,level=1]{What do the Shades Mean?}
+    \bookmark[page=545,level=1]{Heroic and Supernatural Obstacles}
+    \bookmark[page=545,level=1]{Heroic and Supernatural Stats}
+    \bookmark[page=546,level=1]{Heroic Mortal Wound}
+    \bookmark[page=546,level=1]{Heroic Reflexes}
+    \bookmark[page=546,level=1]{Heroic and Supernatural Skills}
+    \bookmark[page=546,level=1]{Heroic and Supernatural Gear}
+    \bookmark[page=547,level=1]{Pushing Pain into the Next Shade}
+    \bookmark[page=547,level=1]{Helping Dice and FoRKs}
+
+\bookmark[page=548,level=0]{Playing the Game}
+    \bookmark[page=548,level=1]{Concept, Concept, Concept}
+    \bookmark[page=549,level=1]{Set Up}
+    \bookmark[page=549,level=1]{Tying in Relationships}
+    \bookmark[page=550,level=1]{Tying in Beliefs, Instincts and Traits}
+    \bookmark[page=551,level=1]{Role of the GM}
+    \bookmark[page=552,level=1]{Role of the Players}
+
+
+% Appendices
+
+\bookmark[page=553,level=0]{Appendices}
+
+\bookmark[page=554,level=0]{Weapons Appendix}
+    \bookmark[page=554,level=1]{Melee Weapons}
+    \bookmark[page=555,level=1]{Found Weapons}
+    \bookmark[page=555,level=1]{Missile Weapon Ranges}
+    \bookmark[page=556,level=1]{Weapon Ranges and Dice}
+    \bookmark[page=557,level=1]{Missile Weapons IMS and DoF}
+    \bookmark[page=557,level=1]{Specialty Bolt and Arrowheads}
+    \bookmark[page=558,level=1]{Thrown Weapons}
+    \bookmark[page=558,level=1]{Bombs}
+
+\bookmark[page=559,level=0]{The Die of Fate}
+    \bookmark[page=559,level=1]{Damage Fate}
+    \bookmark[page=559,level=1]{Gear Fate}
+    \bookmark[page=559,level=1]{Your Fate Is 1 in 6}
+    \bookmark[page=560,level=1]{Dispute and Disagreement}
+    \bookmark[page=560,level=1]{Abilities ≠ DoF!}
+    \bookmark[page=560,level=1]{Weird Random Events}
+    \bookmark[page=560,level=1]{Falling from Great Heights}
+    \bookmark[page=561,level=1]{Details and Embellishment}
+    \bookmark[page=561,level=1]{Always in the Open}
+    \bookmark[page=561,level=1]{Never a Roadblock}
+
+\bookmark[page=562,level=0]{Burning Rogues}
+    \bookmark[page=562,level=1]{Simple NPCs}
+    \bookmark[page=565,level=1]{Monsters and Adversaries}
+        \bookmark[page=565,level=2]{Bugbear}
+        \bookmark[page=565,level=2]{Duelist}
+        \bookmark[page=566,level=2]{Elven Bard}
+        \bookmark[page=566,level=2]{Evil Wizard}
+        \bookmark[page=567,level=2]{Goblin}
+        \bookmark[page=567,level=2]{Great Hunting Spider}
+        \bookmark[page=568,level=2]{Horned Troll}
+        \bookmark[page=568,level=2]{Hoszrem (Lizard Man)}
+        \bookmark[page=569,level=2]{Orc Warrior}
+        \bookmark[page=569,level=2]{Orc Wolf (Astride the Beast)}
+        \bookmark[page=570,level=2]{Orc Wolf (Black Destroyer)}
+        \bookmark[page=570,level=2]{Roden Assassin}
+        \bookmark[page=571,level=2]{Walking Dead}
+        \bookmark[page=571,level=2]{Wyrm}
+
+\bookmark[page=572,level=0]{Index of Headings}
+
+\bookmark[page=584,level=0]{Index of Traits, Skills and Spells}
+    \bookmark[page=584,level=1]{Trait Index}
+    \bookmark[page=589,level=1]{Index of Spells}
+    \bookmark[page=590,level=1]{Skill Index}
+
+\bookmark[page=594,level=0]{Play Sheets}
+
+\bookmark[page=599,level=0]{Bibliography}
+
+% fin
 
 \end{document}
