@@ -7,9 +7,14 @@ The official PDF releases of BWHQ's flagship RPG lack bookmarks. BW Bookmarks is
 
 ## What do I need to use this?
 
-1. A paid copy of [*Burning Wheel Gold Revised* from OneBookShelf](https://www.drivethrurpg.com/product/448187/Burning-Wheel-Gold-Revised) (for BWGR_bookmarked.tex), [*Burning Wheel Codex* from OneBookShelf](https://www.drivethrurpg.com/product/448189/Burning-Wheel-Codex?src=also_purchased) or [*Burning Wheel Anthology 2021* from OneBookShelf](https://www.drivethrurpg.com/product/441674/Burning-Wheel-Anthology-2021) (***not** affiliate links!*)
+1. A paid copy from OneBookSelf of any or all of:
+    - [*Burning Wheel Gold Revised*](https://www.drivethrurpg.com/product/448187/Burning-Wheel-Gold-Revised)
+    - [*Burning Wheel Codex*](https://www.drivethrurpg.com/product/448189/Burning-Wheel-Codex)
+    - [*Burning Wheel Anthology 2021*](https://www.drivethrurpg.com/product/441674/Burning-Wheel-Anthology-2021)
 2. A reasonably current distribution of TeX, such as [TeX Live](https://tug.org/texlive/)
-3. The script matching the book.
+3. The script(s) matching the book(s)
+
+(The above are **not** affiliate links.) 
 
 ## How does it work?
 
