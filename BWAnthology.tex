@@ -1,0 +1,200 @@
+% !TEX program = LuaLaTeX
+% arara: lualatex
+
+
+% # INSTRUCTIONS
+%
+% 1.  Install a TeX distribution, such as [TeX Live](https://tug.org/texlive/).
+% 2.  Place this file in an empty directory.
+% 3.  Place `Burning_Wheel_Anthology_(2021).pdf` in the same directory.
+% 4.  Compile this LaTeX script file using the LuaLaTeX engine.  
+%     You can do so in a GUI TeX editor or on the command line.
+%
+%     - In a GUI TeX editor: open this file, choose LuaLaTeX as the engine,
+%       then click "Compile" or "Typeset".
+%       If the editor is TeXworks or TeXShop it should read the `!TEX` command at the top of
+%       the file and choose the engine automatically for you when you run a compile.
+%
+%     - On the command line using `lualatex` or `arara`:  
+%       
+%           lualatex BWAnthology_bookmarked.tex
+%       
+%       or  
+%       
+%           arara BWAnthology_bookmarked.tex
+%     
+% 5.  The compile should result in a `BWAnthology_bookmarked.pdf` file. Open the file and check
+%     that the bookmarks work.  
+%     If so, enjoy! You can rename the PDF as you like.
+%
+%     If it didn't work, consider filing a bug report on this script's
+%     [GitHub Issues tracker](https://github.com/eggdropsoap/BW-Bookmarks/issues).
+%     It will help diagnose the problem if you include any output from the compile in the report.
+%     (If you compiled with `arara` on the command line, you'll need to re-run the compile with
+%     `lualatex` directly to get useful output.)
+
+
+%%%% script begins %%%%
+
+%%% enable import of PDF v1.7 files: BWGR PDF is v1.7
+\RequirePackage{expl3}
+\ExplSyntaxOn
+\pdf_version_gset:n{1.7}
+\ExplSyntaxOff 
+%%%
+
+
+%%%
+% LaTeX file setup with PDF and bookmarks support
+%%%
+\documentclass{article}
+\usepackage[utf8]{inputenc}	% only used by non-UTF8 engines
+
+% enable reading PDF pages
+\usepackage[final]{pdfpages} % use 'draft' instead of 'final' for faster testing
+
+% PDF "info" panel data
+\usepackage[
+    pdfpagelabels=true,
+    pdftitle={The Burning Wheel Anthology, Volume 1},
+    pdfsubject={For Use With The Burning Wheel Revised Gold Edition},
+    pdfauthor={BWHQ},
+]{hyperref}
+
+% enable bookmarks
+\usepackage{bookmark}
+
+% define a page size that matches BWGR PDF
+% (redundant with \includepdf[fitpaper=], but useful as fallback)
+\usepackage[paperheight=215.9mm,paperwidth=139.7mm,margin=1in,heightrounded]{geometry}
+
+%%%
+% setup ends, content commands begin
+%%%
+
+\begin{document}
+
+% read in BWGR PDF pages
+\includepdf[
+    pages=-,		% all pages
+    noautoscale=true,	% don't resize pages
+    fitpaper=true,	% match output page size to first input page size
+    lastpage=600,	% only needed if using DVI output
+]{Burning_Wheel_Anthology_(2021).pdf}
+
+
+% add the hand-made list of bookmarks to PDF output:
+
+
+% Frontmatter
+
+\bookmark[page=1,level=0]{Title Page}
+\bookmark[page=2,level=0]{Credit Due}
+\bookmark[page=3,level=0]{Contents}
+\bookmark[page=4,level=0]{Collected Thoughts}
+
+
+% Revised Rules
+
+\bookmark[page=5,level=0]{Revised Rules}
+
+    \bookmark[page=6,level=1]{Working Quickly}
+        \bookmark[page=6,level=2]{Increments of Time}
+    \bookmark[page=7,level=1]{Circles 2006}
+        \bookmark[page=7,level=2]{Circles}
+    \bookmark[page=8,level=1]{Lifepath Burner}
+        \bookmark[page=8,level=2]{Settings}
+        \bookmark[page=9,level=2]{Concept, Again}
+        \bookmark[page=9,level=2]{Lifepath Name}
+        \bookmark[page=10,level=2]{Lifepath Skills}
+        \bookmark[page=10,level=2]{Lifepath Requirements}
+        \bookmark[page=11,level=2]{Lifepath Leads}
+        \bookmark[page=11,level=2]{Lifepath Traits}
+        \bookmark[page=12,level=2]{Lifepath Skill Points}
+        \bookmark[page=13,level=2]{Lifepath Trait Points}
+        \bookmark[page=13,level=2]{Lifepath Stat Points}
+        \bookmark[page=14,level=2]{Lifepath Resource Points}
+        \bookmark[page=15,level=2]{Lifepath Time}
+        \bookmark[page=15,level=2]{Make Sense}
+    \bookmark[page=16,level=1]{Alternate Artha}
+        \bookmark[page=16,level=2]{Fate Bloat}
+        \bookmark[page=16,level=2]{Sessions vs Scenarios}
+        \bookmark[page=17,level=2]{Adjusting Our Output}
+        \bookmark[page=18,level=2]{Luck}
+        \bookmark[page=18,level=2]{Traits and Artha}
+    \bookmark[page=19,level=1]{Treatment \& Injury}
+        \bookmark[page=19,level=2]{Damage Type}
+        \bookmark[page=20,level=2]{Wound Severity}
+        \bookmark[page=20,level=2]{Treatment}
+        \bookmark[page=22,level=2]{Bleeding and Deterioration}
+        \bookmark[page=23,level=2]{Permanent Record}
+        \bookmark[page=24,level=2]{Recovery}
+        \bookmark[page=26,level=2]{Disease and Poison}
+
+% New Systems
+
+\bookmark[page=31,level=0]{New Systems}
+    \bookmark[page=32,level=1]{Heroism}
+        \bookmark[page=32,level=2]{The Heroic Epiphany}
+        \bookmark[page=32,level=2]{Heroism}
+        \bookmark[page=33,level=2]{Heroism Situational Tests}
+        \bookmark[page=35,level=2]{Heroic Hypocrisy}
+        \bookmark[page=35,level=2]{Death Is the Path to Immortality}
+    \bookmark[page=36,level=1]{Immortal Investment}
+        \bookmark[page=36,level=2]{Forging the Bond}
+        \bookmark[page=37,level=2]{Changing Owners}
+        \bookmark[page=37,level=2]{Types of Tools}
+        \bookmark[page=39,level=2]{Investment Effects Table}
+    \bookmark[page=40,level=1]{Fighting Arts}
+        \bookmark[page=40,level=2]{Cultural Skills}
+        \bookmark[page=41,level=2]{Philosophy of Martial Arts}
+        \bookmark[page=43,level=2]{Fighting Arts in Character Burning}
+        \bookmark[page=44,level=2]{Example Fighting Arts}
+        \bookmark[page=45,level=2]{Creating Fighting Arts}
+        \bookmark[page=48,level=2]{Adapting These Rules}
+    \bookmark[page=49,level=1]{War}
+        \bookmark[page=50,level=2]{War Is Political}
+        \bookmark[page=52,level=2]{War Is Physical}
+        \bookmark[page=53,level=2]{Intelligence}
+        \bookmark[page=56,level=2]{We Happy Few}
+        \bookmark[page=58,level=2]{Unit Skills and Training}
+        \bookmark[page=59,level=2]{Unit Stature}
+        \bookmark[page=60,level=2]{Unit Strength}
+        \bookmark[page=61,level=2]{Unit Stride}
+        \bookmark[page=62,level=2]{Unit Types}
+        \bookmark[page=63,level=2]{Engagements}
+        \bookmark[page=64,level=2]{Let the Maps of War Be Drawn}
+        \bookmark[page=65,level=2]{Order of Battle}
+        \bookmark[page=67,level=2]{Deployment}
+        \bookmark[page=69,level=2]{Disposition of Forces}
+        \bookmark[page=71,level=2]{Command}
+        \bookmark[page=73,level=2]{Orders}
+        \bookmark[page=76,level=2]{Combat}
+        \bookmark[page=80,level=2]{Combat Fatigue}
+        \bookmark[page=80,level=2]{Steel}
+        \bookmark[page=81,level=2]{Engagement Results}
+        \bookmark[page=87,level=2]{Unit Experience}
+        \bookmark[page=88,level=2]{Rally}
+        \bookmark[page=88,level=2]{Logistics}
+        \bookmark[page=96,level=2]{Field Maneuvers}
+        \bookmark[page=96,level=2]{Leadership}
+        \bookmark[page=99,level=2]{Organization}
+        \bookmark[page=100,level=2]{Raising Troops}
+    \bookmark[page=109,level=1]{Factions}
+        \bookmark[page=109,level=2]{Types of Factions}
+        \bookmark[page=111,level=2]{Faction Hierarchy}
+        \bookmark[page=111,level=2]{Membership Has Its Privileges}
+        \bookmark[page=113,level=2]{Doctrine \& Tradition}
+        \bookmark[page=114,level=2]{Forming a Faction}
+        \bookmark[page=114,level=2]{Faction Phase}
+        \bookmark[page=115,level=2]{Faction Actions}
+        \bookmark[page=119,level=2]{Faction Maintenance}
+        \bookmark[page=120,level=2]{Alliances \& Allegiances}
+        \bookmark[page=120,level=2]{Interference}
+        \bookmark[page=121,level=2]{Destroying a Faction}
+        \bookmark[page=121,level=2]{Winning}
+    \bookmark[page=122,level=1]{Evil}
+
+% fin
+
+\end{document}
